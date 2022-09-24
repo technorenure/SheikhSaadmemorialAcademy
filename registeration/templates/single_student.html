@@ -1,0 +1,71 @@
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <center>
+            <img src="r.jpeg" alt="..." width="100px" class="rounded-circle mt-4">
+
+            <h1 class="text-success">SHEIKH SA'ADU MEMORIAL ACADEMY</h1>
+            <h3 class="text-info text-bg-warning">Student Admission</h3>    
+
+            <div class="table-responsive-lg mt-4">
+                <table class="table">
+                    <!-- <tr>
+                        <th>SUBJECTS</th>
+                        <th>CA1</th>
+                        <th>CA2</th>
+                        <th>EXAM</th>
+                        <th>TOTAL</th>
+                        <th>GRADE</th>
+                    </tr> -->
+                    <tr>
+                        <td><p>first name: <span><h3>{{my_student.first_name}}</h3></p></td>
+                        <td><p>last name: <span><h3>{{my_student.last_name}}</h3></p></td>
+                        <td><p>other name: <span><h3>{{my_student.other_name}}</h3></p></td>
+                        <td><p>date of birth: <span><h3>{{my_student.date_of_birth}}</h3></p></td>
+                        <td><p>place of birth: <span><h3>{{my_student.place_of_birth}}</h3></p></td>
+                    </tr>
+                    <tr>
+                    <td><p>sex: <span><h3>{{my_student.sex}}</h3></p></td>
+                    <td><p>home town: <span><h3>{{my_student.home_town}}</h3></p></td>
+                    <td><p>local_government: <span><h3>{{my_student.local_government}}</h3></p></td>
+                    <td><p>state_of_origin: <span><h3>{{my_student.state_of_origin}}</h3></p></td>
+                    <td><p>religion: <span><h3>{{my_student.religion}}</h3></p></td>
+                    </tr>
+                    <tr>
+                        <td><p>previous_school_if_any: <span><h3>{{my_student.previous_school_if_any}}</h3></p></td>
+                        <td><p>section: <span><h3>{{my_student.section}}</h3></p></td>
+                        <td><p>term: <span><h3>{{my_student.term}}</h3></p></td>
+                        <td><p>student_class: <span><h3>{{my_student.student_class}}</h3></p></td>
+                        <td><p>father_Guardian_name: <span><h3>{{my_student.father_Guardian_name}}</h3></p></td>
+                    </tr>
+                    <tr>
+                    <td><p>occupation: <span><h3>{{my_student.occupation}}</h3></p></td>
+                    <td><p>phone: <span><h3>{{my_student.phone}}</h3></p></td>
+                    <td><p>mother_phone: <span><h3>{{my_student.mother_phone}}</h3></p></td>
+                    <td><p>email: <span><h3>{{my_student.email}}</h3></p></td>
+                    <td></td>
+                    </tr>
+                </table>
+                <p class="text-left">I  {{my_student.father_Guardian_name}} father/guardian of {{my_student.first_name}} {{my_student.last_name}} testify that all the information provided above
+                    is true to the best of my knowledge and i pledge to honor all request/payments in respect of my child ward.</p>
+            </div>
+    
+        </center>
+        <a class="mt-4" href="{% url 'dashboard' %}">back</a>
+    </div>
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
+

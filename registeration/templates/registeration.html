@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4" style="background-color: #e3f2fd;" >
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Navbar</a>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="text-center mb-4">Student Registeration</h1>
+        <form>
+            {% csrf_token %}
+        
+            <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="first name">First Name</label>
+                {{form.first_name}}
+            </div>
+            <div class="form-group col-md-4">
+                <label for="last name">Last Name</label>
+                {{form.last_name}}
+            </div>
+            <div class="form-group col-md-4">
+                <label for="other name">Other Name</label>
+                {{form.other_name}}
+            </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="date of birth">Date of Birth</label>
+                    {{form.date_of_birth}}
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="place of birth">Place of Birth</label>
+                    {{form.place_of_birth}}
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="sex">sex</label>
+                    {{form.sex}}
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="home town">Home Town</label>
+                    {{form.home_town}}
+                </div>
+            </div>
+            
+            <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="local governmet">Local Government</label>
+                {{form.local_government}}
+            </div>
+            <div class="form-group col-md-3">
+                <label for="satate of origin">State Of Origin</label>
+                {{form.state_of_origin}}
+            </div>
+            <div class="form-group col-md-2">
+                <label for="religion">Religion</label>
+                {{form.religion}}
+            </div>
+            <div class="form-group col-md-4">
+                <label for="text">Previous School if any</label>
+                {{form.previous_school_if_any}}
+            </div>
+            </div>
+            <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="section">Section</label>
+                {{form.section}}
+            </div>
+            <div class="form-group col-md-3">
+                <label for="session">session</label>
+                {{form.session}}
+            </div>
+            <div class="form-group col-md-3">
+                <label for="term">Term</label>
+                {{form.term}}
+            </div>
+            <div class="form-group col-md-3">
+                <label for="class">Class</label>
+                {{form.student_class}}
+            </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                <label for="father/guardian name">Father/Gurdian Name</label>
+                {{form.father_Guardian_name}}
+                </div>
+                <div class="form-group col-md-4">
+                <label for="contact address">contact address</label>
+                {{form.contact_address}}
+                </div>
+                <div class="form-group col-md-4">
+                <label for="occupation">Occupation</label>
+                {{form.occupation}}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="phone number">Phone number</label>
+                    {{form.phone}}
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="mother's phone number">Mother's phone number</label>
+                    {{form.mother_phone}}
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="email">Email</label>
+                    {{form.email}}
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="local government of origin">Local Government of origin</label>
+                    {{form.local_government}}
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                <label for="state of origin">State Of origin</label>
+                {{form.first_name}}
+                </div>
+                <div class="form-group col-md-3">
+                <label for="nationality">Nationality</label>
+                {{form.nationality}}
+                </div>
+                
+                <div class="form-group col-md-3">
+                <label for="recent passpot">recent passpot</label>
+                {{form.first_name}}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    I  'parents name' father/guardian of 'student name' testify that all the information provided above
+                    is true to the best of my knowledge and i pledge to honor all request/payments in respect of my child ward.
+                </label>
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Register</button>
+            </div>
+            
+            
+        </form>
+        <a class="btn btn-secondary" href="{% url 'dashboard'%}">back</a>
+    </div>
+
+
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+</body>
+</html>

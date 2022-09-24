@@ -1,0 +1,32 @@
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <div class="container">
+    <center>
+      <h1>{{my_class.name}}</h1>
+      {% for stdnt in class_members %}
+        <h4 class="text-left">{{stdnt.first_name}} {{stdnt.last_name}} <span>
+          <a class="btn btn-primary btn-sm"href="{% url 'single_student' stdnt.id %}">view student</a>
+          <a class="btn btn-primary btn-sm"href="{% url 'update_student' stdnt.id %}">update student</a>
+          <a class="btn btn-primary btn-sm"href="{% url 'add_score' stdnt.id %}">add score</a>
+          <a class="btn btn-primary btn-sm"href="{% url 'update_score' stdnt.id %}">update_score</a>
+          <a class="btn btn-primary btn-sm"href="{% url 'report' stdnt.id %}">view report</a>
+        </span></h4>
+      {% endfor %}
+      <a class="btn-secondary btn-lg" href="{% url 'dashboard' %}">back</a>
+    </center>
+  </div>
+
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

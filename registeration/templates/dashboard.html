@@ -1,0 +1,55 @@
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h1>welcome to your dashboard</h1>
+    <a class="btn btn-primary" href="{% url 'registeration' %}">register student</a>
+    <a class="btn btn-danger" href="{% url 'logout' %}">logout</a>
+    <div class="row mt-2">
+      <div class="col-lg-4 col-sm-12 col-md-12">
+        <div class="card border-primary mb-3" style="max-width: 18rem;">
+          <div class="card-header"><h3>Total Students</h3></div>
+          <div class="card-body text-primary">
+            <h5 class="card-title">{{total}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-12 col-md-12">
+        <div class="card border-primary mb-3" style="max-width: 18rem;">
+          <div class="card-header"><h3>Males</h3></div>
+          <div class="card-body text-primary">
+            <h5 class="card-title">{{males}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-12 col-md-12">
+        <div class="card border-primary mb-3" style="max-width: 18rem;">
+          <div class="card-header"><h3>Females</h3></div>
+          <div class="card-body text-primary">
+            <h5 class="card-title">{{females}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2>classes</h2>
+    {% for c in student_class %}
+      <h4>{{c.name}} <span><a class="btn btn-primary" href="{% url 'single_class' c.id %}">view</a></span></h4>
+    {% endfor %}
+  </div>
+
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
